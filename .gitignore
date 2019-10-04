@@ -1,6 +1,6 @@
-virtual
-pycache
-*.pycache
+virtual/
+__pycache__
+*.pyc
 .env
-vscode
+.vscode
 sqlite3
