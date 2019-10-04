@@ -1,0 +1,6 @@
+virtual
+pycache
+*.pycache
+.env
+vscode
+sqlite3
