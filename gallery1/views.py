@@ -1,16 +1,12 @@
 from django.shortcuts import render
 from django.http  import HttpResponse,Http404
+from .models import Image
 
 # Create your views here.
 def home(request):
     return render(request, 'index.html')
 
 def create_album(request):
-    html = f'''
-        <html>
-            <body>
-                <h1> TFTFTF </h1>
-            </body>
-        </html>
-            '''
-    return HttpResponse(html)
+    images = Image.all_images()
+    # return HttpResponse(html)
+    return render(request, 'generals/image.html',{"date": date,"news":news})
