@@ -3,8 +3,8 @@ from django.http  import HttpResponse,Http404
 # from .models import Image
 
 # Create your views here.
-def home(request):
-    return render(request, 'index.html')
+# def home(request):
+#     return render(request, 'index.html')
 
 def create_album(request):
     images = Image.all_images()
