@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http  import HttpResponse,Http404
-from .models import Image
+# from .models import Image
 
 # Create your views here.
 def home(request):
@@ -8,5 +8,10 @@ def home(request):
 
 def create_album(request):
     images = Image.all_images()
+    locations = Location.objects.all()
     # return HttpResponse(html)
-    return render(request, 'generals/image.html',{"date": date,"news":news})
+    return render(request, 'generals/image.html',{"images": images,"locations":locations})
+
+def location(request,location):
+    locations = Location.objects.all()
+    return render(request, 'generals/location.html',{"locations":locations})
