@@ -8,5 +8,5 @@ class Photo(models.Model):
     # category = models.ManyToManyField(categories)
     image_url = models.ImageField(upload_to="user_images/%Y/%m/%d/")
     
-    # def __unicode__(self):
-    #     return self.name
+    def __str__(self):
+        return self.name
