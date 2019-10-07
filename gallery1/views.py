@@ -9,9 +9,11 @@ from .models import Photo,location
 def create_album(request):
     photos = Photo.objects.all()
     print(photos)
-    # return HttpResponse(html)
     return render(request, 'generals/photo.html',{"photos": photos})
 
 def location(request,location):
     locations = location.objects.all()
-    return render(request, 'generals/location.html',{"locations":locations})
+    selected_location = location.objects.get(id = location)
+    images = Image.objects.filter(location = selected_location.id)
+
+    return render(request, 'generals/location.html',{"locations":locations,"location":selected_location,"images":images})
