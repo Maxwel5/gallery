@@ -1,4 +1,8 @@
 {% extends 'generals/base.html' %}
 {% block content %}
 {{block.super}}
+
+{% for photo in photos%}
+    <img src="{{photo.image_url.url}}" alt="">
+{% endfor %}
 {% endblock %}
