@@ -53,3 +53,8 @@ class Photo(models.Model):
     def display_gallery1(cls,photo):
         gallery1 = cls.objects.filter(categories_name__contain = display_gallery1)
         return gallery1
+
+    @classmethod
+    def search_by_name(cls,search_term):
+        gallery1 = cls.objects.filter(name_icontain=search_term)
+        return gallery1
