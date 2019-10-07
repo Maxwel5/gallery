@@ -1,17 +1,19 @@
 {% extends 'generals/base.html' %}
 {% block content %}
-{{block.super}}
 
 <div class="container">
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <h2 class="text-center"> {{ gallery1_id.name }} </h2>
-    </div>
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <img src="{{gallery1_id.category_photo.url}}" class="img-responsive" alt="Photo">
-    </div>
-</div>
+    <div class="card-colums">
 
-<!-- {% for photo in photos%}
-    <img src="{{photo.image_url.url}}" alt="">
-{% endfor %} -->
+    
+    {% for photo in photos%}
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{photo.image_url.url}}"><br>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
 {% endblock %}

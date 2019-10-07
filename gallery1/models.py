@@ -32,7 +32,7 @@ class Photo(models.Model):
     description = models.TextField()
     location = models.ForeignKey(location) 
     category = models.ManyToManyField(categories)
-    image_url = models.ImageField(upload_to="user_images/%Y/%m/%d/")
+    image_url = models.ImageField(upload_to="user_images/")
     
     def __str__(self):
         return self.name

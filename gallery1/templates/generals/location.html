@@ -1,4 +1,16 @@
 {% extends 'generals/base.html' %}
 {% block content %}
 {{block.super}}
+
+<div class="container">
+    <div class="row">
+        <img src="{{category.category_photo.url}}" class="img-responsive" alt="Photo">
+    </div>
+    <div class="row">
+        <h1 class="text-center">{{category.name}}</h1>
+    </div>
+    <div class="row">
+        <p>category.post</p>
+    </div>
+</div>
 {% endblock %}
