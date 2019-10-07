@@ -28,6 +28,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lobster|Satisfy&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -39,6 +40,7 @@
 
     {%endblock%}
     {% block scripts %}
+    <script src="{% static '/js/copy.js'%}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/4.8.1/jquery.min.js"></script>
     {% bootstrap_javascript %}
     {% endblock %}
