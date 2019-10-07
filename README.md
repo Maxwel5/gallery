@@ -62,4 +62,4 @@ steps to follow
 
 * you will see something similar to what is above here and you will have already cloned the repo.
 
-# Licence
+# [Licence](https://opensource.org/licenses/MIT)
