@@ -1,0 +1,22 @@
+{%extends 'all-news/base.html'%}
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% if category %}
+        <h2>Observed {{ categories|length }} of searched term {{photo}}</h2>
+        {% else %}
+        <h2>Observed no photo for the search term{{photo}}</h2>
+        {% endif %}
+    </div>
+    <div class="row">
+
+        {% if photos %}
+        {% for photo in photos %}
+        <div class="col-sm-6 col-md-4">
+            <h1>{{photo.category.name}}</h1>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

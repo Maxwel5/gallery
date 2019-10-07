@@ -6,6 +6,6 @@ urlpatterns=[
     # url('^$',views.home),
     # url('^$',views.home,name = 'home'),
     url('^$',views.create_album,name = 'create_album'),
-    url(r'^location/(\d+)',views.location,name='location')
+    url(r'^location/(\d+)',views.location,name='location'),
     url(r'^search/', views.search_results, name='search_results')
 ]

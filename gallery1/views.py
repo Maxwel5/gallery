@@ -22,11 +22,11 @@ def search_results(request):
 
     if 'category' in request.GET and request.GET["category"]:
         search_term = request.GET.get("category")
-        searched_cateories = category.search_by_name(search_term)
+        searched_photos = category.search_by_name(search_term)
         message = f"{search_term}"
 
-        return render(request, 'generals/search.html',{"message":message,"categories": searched_categories})
+        return render(request, 'generals/search.html',{"photos":searched_photos,"categories": searched_categories})
 
     else:
         message = "You haven't searched for any term"
-        return render(request, 'generals/search.html',{"message":message})
+        return render(request, 'generals/search.html',{"photos":searched_photos})
