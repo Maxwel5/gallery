@@ -24,9 +24,11 @@
                     font-family: 'Satisfy', cursive; color: blue">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
+                            <h2>{{photo.location}}</h2>
                             <img src="{{photo.image_url.url}}" class="card-img"><br>
                             <h4>{{photo.name}}</h4>
                             <p>{{photo.description}}</p>
+                            <p>{{photo.category}}</p>
                             <input class="form-control" value='{{photo.image_url}}' id="{{photo.id}}.url"></input>
                             <button class="btn btn-info btn-sm" onclick="copy('{{photo.id}}.url')">Copy </button>
                         </div>
