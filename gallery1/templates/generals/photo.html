@@ -2,18 +2,24 @@
 {% block content %}
 
 <div class="container">
-    <div class="card-colums">
+    <div class="card-columns">
+        {% for photo in photos%}
+        <div class="card">
+            <img src="{{photo.image_url.url}}" data-toggle="modal" data-target=".modal{{photo.pk}}"
+                class="card-img"><br>
+        </div>
 
-    
-    {% for photo in photos%}
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-                <img src="{{photo.image_url.url}}"><br>
+        <div class="modal fade modal{{photo.pk}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <img src="{{photo.image_url.url}}" class="card-img"><br>
+                    <h4>{{photo.name}}</h4>
+                    <p>{{photo.description}}</p>
+                </div>
             </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
 </div>
 {% endblock %}

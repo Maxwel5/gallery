@@ -50,12 +50,12 @@ class Photo(models.Model):
         gallery1 = cls.objects.all()
         return gallery1
 
-    @classmethod
-    def display_gallery1(cls,photo):
-        gallery1 = cls.objects.filter(categories_name__contain = display_gallery1)
-        return gallery1
+    # @classmethod
+    # def display_gallery1(cls,photo):
+    #     gallery1 = cls.objects.filter(category__name__icontains = display_gallery1)
+    #     return gallery1
 
     @classmethod
-    def search_by_name(cls,search_term):
-        gallery1 = cls.objects.filter(name_icontain=search_term)
+    def search_by_category(cls,search_term):
+        gallery1 = cls.objects.filter(category__name__icontains=search_term)
         return gallery1

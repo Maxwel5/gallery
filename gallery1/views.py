@@ -20,12 +20,12 @@ def location(request,location):
 
 def search_results(request):
 
-    if 'category' in request.GET and request.GET["category"]:
-        search_term = request.GET.get("category")
-        searched_photos = category.search_by_name(search_term)
+    if 'photo' in request.GET and request.GET["photo"]:
+        search_term = request.GET.get("photo")
+        searched_photos = Photo.search_by_category(search_term)
         message = f"{search_term}"
 
-        return render(request, 'generals/search.html',{"photos":searched_photos,"categories": searched_categories})
+        return render(request, 'generals/search.html',{"photos":searched_photos,"message":message})
 
     else:
         message = "You haven't searched for any term"
