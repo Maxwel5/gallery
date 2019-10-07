@@ -34,8 +34,8 @@ class PhotoTestCase(TestCase):
         self.updated_photo = Photo.get_photo_by_id(1)
         self.assertEqual(self.updated_photo.photo_url,"/photo")
 
-    # def tearDown(self):
-    #     Photo.objects.all().delete()
-    #     categories.objects.all().delete()
-    #     location.objects.all().delete()
+    def tearDown(self):
+        Photo.objects.all().delete()
+        categories.objects.all().delete()
+        location.objects.all().delete()
 

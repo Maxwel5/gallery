@@ -43,3 +43,13 @@ class Photo(models.Model):
 
     def delete_photo(self):
         self.delete()
+
+    @classmethod
+    def create_album(cls):
+        gallery1 = cls.objects.all()
+        return gallery1
+
+    @classmethod
+    def display_gallery1(cls,photo):
+        gallery1 = cls.objects.filter(categories_name__contain = display_gallery1)
+        return gallery1
