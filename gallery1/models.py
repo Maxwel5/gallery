@@ -16,7 +16,7 @@ class location(models.Model):
 
 class categories(models.Model):
     name = models.CharField(max_length=100)
-    category_photo = models.PhotoField(upload_to = 'categories/')
+    # category_photo = models.PhotoField(upload_to = 'categories/')
 
     def __str__(self):
         return self.name
