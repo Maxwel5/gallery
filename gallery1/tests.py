@@ -16,3 +16,21 @@ class PhotoTestCase(TestCase):
         photo = Photo.objects.all()
         self.assertTrue(len(photo) > 0)
 
+    def test_delete_photo(self):
+        self.photo.save_photo()
+        self.searched_photo = Photo.get_photo_by_id(1)
+        self.searched_photo.delete_photo()
+        self.assertTrue(len(Photo.objects.all()) == 0)
+    
+    def test_display_method(self):
+        self.photo.save_photo()
+        self.photo = Photo.objects.filter(id=1).display(photo_url = '/photo')
+        self.display_photo = Photo.get_photo_by_id(1)
+        self.assertTrue(self.display_photo.photo_url,"/photo")
+
+    def test_update_photo(self):
+        self.photo.save_photo()
+        self.photo = Photo.objects.filter(id = 1).update(photo_url = "/photo")
+        self.updated_photo = Photo.get_photo_by_id(1)
+        self.assertEqual(self.updated_photo.photo_url,"/photo")
+
