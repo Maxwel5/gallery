@@ -17,3 +17,16 @@ def location(request,location):
     images = Image.objects.filter(location = selected_location.id)
 
     return render(request, 'generals/location.html',{"locations":locations,"location":selected_location,"images":images})
+
+def search_results(request):
+
+    if 'category' in request.GET and request.GET["category"]:
+        search_term = request.GET.get("category")
+        searched_cateories = category.search_by_name(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'generals/search.html',{"message":message,"categories": searched_categories})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'generals/search.html',{"message":message})
