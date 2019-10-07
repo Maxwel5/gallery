@@ -11,3 +11,8 @@ class PhotoTestCase(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.photo,Photo))
 
+    def test_save_method(self):
+        self.photo.save_photo()
+        photo = Photo.objects.all()
+        self.assertTrue(len(photo) > 0)
+

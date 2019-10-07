@@ -38,8 +38,8 @@ class Photo(models.Model):
     class Meta:
         ordering = ['name']
 
-    def save_photo(self):
-        self.save()
+    # def save_photo(self):
+    #     self.save()
 
     def delete_photo(self):
         self.delete()
