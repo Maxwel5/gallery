@@ -12,3 +12,9 @@ class Photo(models.Model):
         return self.name
     class Meta:
         ordering = ['name']
+
+    def save_photo(self):
+        self.save()
+
+    def delete_photo(self):
+        self.delete()
